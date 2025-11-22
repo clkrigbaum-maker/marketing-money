@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Best No-Drill Security Cameras for Renters: Secure Your Apartment in Minutes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth; /* Enables smooth scrolling for anchor links */
+        }
+        .question-step {
+            transition: opacity 0.5s ease-in-out, max-height 0.5s ease-in-out;
+        }
+        .hidden-step {
+            opacity: 0;
+            max-height: 0;
+            overflow: hidden;
+        }
+        .visible-step {
+            opacity: 1;
+            max-height: 500px; /* Adjust as needed */
+        }
+        .product-card {
+            transition: all 0.3s ease-in-out;
+            border: 2px solid transparent;
+        }
+        .recommended {
+            border-color: #3b82f6; /* blue-500 */
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            transform: scale(1.02);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Header -->
+    <header class="bg-white shadow-sm">
+        <div class="container mx-auto px-6 py-4">
+            <h1 class="text-2xl md:text-3xl font-bold text-gray-900">No-Drill Security Solutions</h1>
+            <p class="text-sm text-gray-600">Your guide to renter-friendly home security.</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 py-8 md:py-12">
+
+        <!-- Hero Section -->
+        <section class="text-center">
+            <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight text-gray-900">Stop Worrying, Start Watching.</h2>
+            <p class="mt-4 max-w-2xl mx-auto text-lg md:text-xl text-gray-600">Discover the best no drill security camera for renters. Finally, an easy install wireless security camera that's completely renter friendly—no damage, no problem.</p>
+        </section>
+
+        <!-- Questionnaire Section -->
+        <section id="questionnaire" class="mt-12 max-w-xl mx-auto bg-white p-6 md:p-8 rounded-xl shadow-lg">
+            <div id="q-intro">
+                <h3 class="text-xl font-bold text-center">Find Your Perfect Camera in 30 Seconds</h3>
+                <p class="text-center text-gray-600 mt-2">Answer a few quick questions to get a personalized recommendation.</p>
+                <button onclick="startQuiz()" class="mt-4 w-full bg-blue-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors">Let's Start</button>
+            </div>
+
+            <!-- Question 1 -->
+            <div id="q1" class="question-step hidden-step">
+                <h4 class="font-semibold text-lg">1. What's your biggest worry about installation?</h4>
+                <div class="mt-4 space-y-3">
+                    <button onclick="storeAnswerAndNext(2, 'installation', 'damage')" class="w-full text-left p-4 border rounded-lg hover:bg-gray-100 hover:border-blue-500 transition">A) Drilling holes and damaging walls</button>
+                    <button onclick="storeAnswerAndNext(2, 'installation', 'wiring')" class="w-full text-left p-4 border rounded-lg hover:bg-gray-100 hover:border-blue-500 transition">B) Complicated wiring and electrical work</button>
+                    <button onclick="storeAnswerAndNext(2, 'installation', 'apps')" class="w-full text-left p-4 border rounded-lg hover:bg-gray-100 hover:border-blue-500 transition">C) Confusing technical setup & apps</button>
+                </div>
+            </div>
+
+            <!-- Question 2 -->
+            <div id="q2" class="question-step hidden-step">
+                <h4 class="font-semibold text-lg">2. Where do you need to watch over?</h4>
+                <div class="mt-4 space-y-3">
+                    <button onclick="storeAnswerAndNext(3, 'location', 'doorway')" class="w-full text-left p-4 border rounded-lg hover:bg-gray-100 hover:border-blue-500 transition">A) My front door / apartment hallway</button>
+                    <button onclick="storeAnswerAndNext(3, 'location', 'outdoor')" class="w-full text-left p-4 border rounded-lg hover:bg-gray-100 hover:border-blue-500 transition">B) An outdoor space like a patio or balcony</button>
+                    <button onclick="storeAnswerAndNext(3, 'location', 'indoor')" class="w-full text-left p-4 border rounded-lg hover:bg-gray-100 hover:border-blue-500 transition">C) An indoor room</button>
+                </div>
+            </div>
+
+            <!-- Question 3 -->
+            <div id="q3" class="question-step hidden-step">
+                <h4 class="font-semibold text-lg">3. How tech-savvy are you?</h4>
+                <div class="mt-4 space-y-3">
+                    <button onclick="showResults('tech', 'gadgets')" class="w-full text-left p-4 border rounded-lg hover:bg-gray-100 hover:border-blue-500 transition">A) I'm pretty comfortable with new gadgets.</button>
+                    <button onclick="showResults('tech', 'tutorial')" class="w-full text-left p-4 border rounded-lg hover:bg-gray-100 hover:border-blue-500 transition">B) I can follow a YouTube tutorial.</button>
+                    <button onclick="showResults('tech', 'simple')" class="w-full text-left p-4 border rounded-lg hover:bg-gray-100 hover:border-blue-500 transition">C) I prefer things to be as simple as possible.</button>
+                </div>
+            </div>
+            
+            <!-- Loading/Results Message -->
+            <div id="q-results-message" class="question-step hidden-step text-center">
+                <h4 class="font-semibold text-lg">Great! Analyzing your answers...</h4>
+                <p id="recommendation-text" class="mt-2 text-blue-600 font-semibold"></p>
+            </div>
+        </section>
+
+        <!-- Offers/Products Section -->
+        <section id="offers" class="mt-16 hidden">
+            <div class="text-center">
+                <h3 class="text-3xl font-bold">Our Top No-Drill Camera Picks for 2025</h3>
+                <p class="mt-2 text-gray-600">Based on your needs, here are the best options for you.</p>
+            </div>
+
+            <div id="product-grid" class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Product 1: Blink -->
+                <div id="product-blink" class="product-card bg-white rounded-xl shadow-lg overflow-hidden flex flex-col">
+                    <div class="p-6 relative">
+                        <div id="badge-blink" class="hidden absolute top-0 right-6 -mt-3">
+                           <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-semibold bg-blue-500 text-white">Recommended For You</span>
+                        </div>
+                        <span class="inline-block bg-green-100 text-green-800 text-xs px-2 rounded-full uppercase font-semibold tracking-wide">Top Pick</span>
+                        <h4 class="mt-2 text-2xl font-bold">Blink Outdoor 4</h4>
+                        <p class="mt-2 text-gray-600">The perfect balance of performance and simplicity. With a two-year battery life, you can set it and forget it.</p>
+                    </div>
+                    <div class="p-6 bg-gray-50 flex-grow">
+                        <ul class="space-y-2 text-sm">
+                            <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>100% Wire-Free & No-Drill Mount</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Up to 2 Years of Battery Life</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Crisp 1080p HD Video & Two-Way Audio</li>
+                        </ul>
+                    </div>
+                    <div class="p-6">
+                        <a href="https://amzn.to/44UCnPX" class="block w-full text-center bg-blue-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors">Check Price on Amazon</a>
+                        <a href="#blink-review" class="mt-3 text-sm text-center block text-blue-600 hover:underline">Read our quick review & tip &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Product 2: Eufy -->
+                <div id="product-eufy" class="product-card bg-white rounded-xl shadow-lg overflow-hidden flex flex-col">
+                    <div class="p-6 relative">
+                        <div id="badge-eufy" class="hidden absolute top-0 right-6 -mt-3">
+                           <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-semibold bg-blue-500 text-white">Recommended For You</span>
+                        </div>
+                        <span class="inline-block bg-yellow-100 text-yellow-800 text-xs px-2 rounded-full uppercase font-semibold tracking-wide">Solar Powered</span>
+                        <h4 class="mt-2 text-2xl font-bold">eufy Security SoloCam S340</h4>
+                        <p class="mt-2 text-gray-600">Never change a battery again. This camera's integrated solar panel keeps it charged with just a few hours of sun.</p>
+                    </div>
+                    <div class="p-6 bg-gray-50 flex-grow">
+                        <ul class="space-y-2 text-sm">
+                            <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Integrated Solar Panel</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>3K Resolution & 360° Pan/Tilt</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>No Monthly Fees Required</li>
+                        </ul>
+                    </div>
+                    <div class="p-6">
+                        <a href="https://amzn.to/4eVjctI" class="block w-full text-center bg-blue-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors">Check Price on Amazon</a>
+                        <a href="#eufy-review" class="mt-3 text-sm text-center block text-blue-600 hover:underline">Read our quick review & tip &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog/Reviews Section -->
+        <section id="blog" class="mt-20">
+            <div class="text-center">
+                <h3 class="text-3xl font-bold">Quick Reviews & Tips</h3>
+                <p class="mt-2 text-gray-600 max-w-2xl mx-auto">Get the real scoop. Here are our quick thoughts and tips for a perfect setup.</p>
+            </div>
+
+            <div class="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Blog Post 1: Blink Review -->
+                <div id="blink-review" class="bg-white p-6 rounded-xl shadow-lg">
+                    <h4 class="font-bold text-xl">Blink Outdoor 4: Quick Review</h4>
+                    <p class="text-sm text-gray-500 mt-1">The King of Convenience</p>
+                    <div class="mt-4">
+                        <p><strong class="text-green-600">Pro:</strong> The 2-year battery life is a game-changer. It makes this a truly "set and forget" easy install wireless security camera.</p>
+                        <p class="mt-2"><strong class="text-green-600">Pro:</strong> Setup is incredibly simple. From box to live view in under 10 minutes, no exaggeration.</p>
+                        <p class="mt-2"><strong class="text-red-600">Con:</strong> It relies on a "Sync Module" hub that must be plugged in indoors and stay connected to your Wi-Fi.</p>
+                        <hr class="my-4">
+                        <p class="text-sm"><strong class="text-blue-600">Setup Tip:</strong> Place the Sync Module in a central location in your home, not tucked away in a corner. A weak signal between the module and the camera is the #1 cause of connection issues.</p>
+                    </div>
+                </div>
+
+                <!-- Blog Post 2: Eufy Review -->
+                <div id="eufy-review" class="bg-white p-6 rounded-xl shadow-lg">
+                    <h4 class="font-bold text-xl">Eufy SoloCam S340: Quick Review</h4>
+                    <p class="text-sm text-gray-500 mt-1">The Powerhouse Performer</p>
+                    <div class="mt-4">
+                        <p><strong class="text-green-600">Pro:</strong> The solar panel works great, meaning you may never need to charge it manually. A top-tier apartment security camera with no drilling needed.</p>
+                        <p class="mt-2"><strong class="text-green-600">Pro:</strong> Excellent 3K video quality and the ability to pan/tilt gives you coverage of a huge area with one device.</p>
+                        <p class="mt-2"><strong class="text-red-600">Con:</strong> It's larger and heavier than the Blink, making it slightly more conspicuous.</p>
+                        <hr class="my-4">
+                        <p class="text-sm"><strong class="text-blue-600">Setup Tip:</strong> Before mounting, use the app's live view to check that your chosen spot gets at least 2-3 hours of direct sunlight per day. A shady balcony might not be enough to keep it fully charged.</p>
+                    </div>
+                </div>
+
+                <!-- Blog Post 3: General Tips -->
+                <div class="bg-white p-6 rounded-xl shadow-lg">
+                    <h4 class="font-bold text-xl">Top Tip for Renters</h4>
+                    <p class="text-sm text-gray-500 mt-1">Use a Damage-Free Mount!</p>
+                    <div class="mt-4">
+                        <p>The secret to a truly renter friendly security camera experience isn't just the camera—it's how you mount it.</p>
+                        <p class="mt-2">Instead of screws, use a high-quality <strong class="text-green-600"><a href="https://amzn.to/45cv5bu" class="underline hover:text-blue-600" target="_blank" rel="noopener noreferrer">vinyl siding hook</a></strong> or a <strong class="text-green-600"><a href="https://amzn.to/413aOma" class="underline hover:text-blue-600" target="_blank" rel="noopener noreferrer">no-drill gutter mount</a></strong>. For indoor use or smooth outdoor surfaces (like a doorframe), <strong class="text-green-600"><a href="https://amzn.to/3ISCqnP" class="underline hover:text-blue-600" target="_blank" rel="noopener noreferrer">3M Command Outdoor Strips</a></strong> are your best friend.</p>
+                        <hr class="my-4">
+                        <p class="text-sm"><strong class="text-blue-600">Solution:</strong> Always test the adhesive or mount in an inconspicuous spot first. This ensures you can get your full security deposit back without any surprise damage. A proper damage free security camera mount is key!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white mt-16 border-t">
+        <div class="container mx-auto px-6 py-8 text-center text-gray-600">
+            <p>&copy; 2025 Your Site Name. All rights reserved.</p>
+            <p class="text-
+(Content truncated due to size limit. Use page ranges or line ranges to read remaining content)
