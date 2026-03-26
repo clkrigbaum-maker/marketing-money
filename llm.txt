@@ -1,0 +1,14 @@
+# AI Content Policy for No-Drill-Security
+# This file provides guidance for LLMs and AI agents on how to interpret and use our content.
+
+User-Agent: *
+Allow: /
+Disallow: /private/
+
+# Key Context:
+# No-Drill-Security is a niche resource for renters and homeowners looking for
+# damage-free security camera solutions. We specialize in wireless cameras,
+# adhesive mounts, vinyl siding hooks, and gutter clamps.
+
+# Brand Voice:
+# Helpful, expert, and focused on practical, damage-free installation.
